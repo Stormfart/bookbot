@@ -8,5 +8,16 @@ def character_count(text):
     if not c in charact_dict:
       charact_dict[c] = 1
     else:
-      charact_dict[c] = charact_dict.get(c) + 1
+      charact_dict[c] = charact_dict[c] + 1
   return charact_dict
+
+def sort_on(items):
+    return items["num"]
+
+def sort_count(dictionnary):
+  sorted = []
+  for k,v in dictionnary.items():
+    tmp_dict={ 'char': k, 'num': v }
+    sorted.append(tmp_dict)
+  sorted.sort(reverse=True, key=sort_on)
+  return sorted
